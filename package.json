@@ -1,6 +1,26 @@
 {
   "name": "xobia",
+  "version": "0.0.1",
+  "description": "ai",
+  "keywords": [
+    "ai"
+  ],
   "type": "module",
+  "license": "MIT",
+  "files": [
+    "build"
+  ],
+  "homepage": "https://github.com/codenoobforreal/xobia",
+  "bugs": {
+    "bugs": {
+      "url": "https://github.com/codenoobforreal/xobia/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codenoobforreal/xobia"
+  },
+  "author": "JunYu Pan <panjunyu1222@foxmail.com> (https://github.com/codenoobforreal)",
   "scripts": {
     "build": "cross-env NODE_ENV=production react-router build",
     "dev": "react-router dev",
