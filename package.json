@@ -11,7 +11,8 @@
     "test": "vitest run",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "ci": "bun run lint && bun run check-format && bun run test"
+    "ci": "bun run lint && bun run check-format && bun run test",
+    "prepare": "node .husky/install.mjs"
   },
   "dependencies": {
     "@huggingface/transformers": "^3.3.3",
@@ -31,6 +32,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
     "jsdom": "^26.0.0",
     "prettier": "^3.4.2",
     "typescript": "~5.7.2",
