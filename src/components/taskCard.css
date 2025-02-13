@@ -1,0 +1,24 @@
+.taskCard {
+	display: grid;
+	gap: 0.5rem;
+	padding: 0.6rem;
+	background-color: hsl(188, 50%, 95%);
+	color: var(--color-secondary);
+	border: 2px solid hsl(188, 50%, 95%);
+	border-radius: 0.5rem;
+	box-shadow: 0.2rem 0.2rem 0.4rem hsla(188, 50%, 10%, 0.15);
+}
+
+.taskCard-title {
+	font-size: 1.8rem;
+	padding: 0;
+}
+
+.taskCard-model {
+	font-size: 1.6rem;
+}
+
+.taskCard-desc {
+	font-size: 1.6rem;
+	align-self: end;
+}

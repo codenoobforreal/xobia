@@ -1,0 +1,459 @@
+[
+	{
+		"category": "Natural Language Processing",
+		"category_translation": "自然语言处理",
+		"tasks": [
+			{
+				"task": "Fill Mask",
+				"id": "fill mask",
+				"description": "Masking some of the words in a sentence and predicting which words should replace those masks.",
+				"supported": true,
+				"translation": {
+					"task": "填空",
+					"id": "填空任务",
+					"description": "在句子中遮蔽某些单词并预测哪些单词应该替换这些遮蔽内容.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Question Answering",
+				"id": "question answering",
+				"description": "Retrieve the answer to a question from a given text.",
+				"supported": true,
+				"translation": {
+					"task": "问答",
+					"id": "问答任务",
+					"description": "从给定文本中检索问题的答案.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Sentence Similarity",
+				"id": "sentence similarity",
+				"description": "Determining how similar two texts are.",
+				"supported": true,
+				"translation": {
+					"task": "句子相似度",
+					"id": "句子相似度任务",
+					"description": "确定两个文本有多相似.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Summarization",
+				"id": "summarization",
+				"description": "Producing a shorter version of a document while preserving its important information.",
+				"supported": true,
+				"translation": {
+					"task": "文本摘要",
+					"id": "摘要任务",
+					"description": "生成文档的较短版本，同时保留其重要信息.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Table Question Answering",
+				"id": "table question answering",
+				"description": "Answering a question about information from a given table.",
+				"supported": false,
+				"translation": {
+					"task": "表格问答",
+					"id": "表格问答任务",
+					"description": "回答与给定表中信息相关的问题.",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Text Classification",
+				"id": "text classification or sentiment analysis",
+				"description": "Assigning a label or class to a given text.",
+				"supported": true,
+				"translation": {
+					"task": "文本分类",
+					"id": "文本分类任务",
+					"description": "将标签或类别分配给给定文本.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Text Generation",
+				"id": "text generation",
+				"description": "Producing new text by predicting the next word in a sequence.",
+				"supported": true,
+				"translation": {
+					"task": "文本生成",
+					"id": "文本生成任务",
+					"description": "通过预测序列中的下一个单词来生成新文本.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Text to text Generation",
+				"id": "text2text generation",
+				"description": "Converting one text sequence into another text sequence.",
+				"supported": true,
+				"translation": {
+					"task": "文本到文本生成",
+					"id": "文本到文本生成任务",
+					"description": "将一个文本序列转换为另一个文本序列.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Token Classification",
+				"id": "token classification 或 ner",
+				"description": "Assigning a label to each token in a text.",
+				"supported": true,
+				"translation": {
+					"task": "分词分类",
+					"id": "分词分类任务",
+					"description": "为文本中的每个分词分配一个标签.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Translation",
+				"id": "translation",
+				"description": "Converting text from one language to another.",
+				"supported": true,
+				"translation": {
+					"task": "文本翻译",
+					"id": "翻译任务",
+					"description": "将文本从一种语言转换为另一种语言.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Zero Shot Classification",
+				"id": "zero shot classification",
+				"description": "Classifying text into classes that are unseen during training.",
+				"supported": true,
+				"translation": {
+					"task": "零样本分类",
+					"id": "零样本分类任务",
+					"description": "将文本分类到训练过程中未见过的类别.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Feature Extraction",
+				"id": "feature extraction",
+				"description": "Transforming raw data into numerical features that can be processed while preserving the information in the original dataset.",
+				"supported": true,
+				"translation": {
+					"task": "特征提取",
+					"id": "特征提取任务",
+					"description": "将原始数据转换为可以在处理过程中使用的数值特征，同时保留原始数据集的信息.",
+					"supported": "支持"
+				}
+			}
+		]
+	},
+	{
+		"category": "Vision",
+		"category_translation": "视觉处理",
+		"tasks": [
+			{
+				"task": "Depth Estimation",
+				"id": "depth estimation",
+				"description": "Predicting the depth of objects present in an image.",
+				"supported": true,
+				"translation": {
+					"task": "深度估计",
+					"id": "深度估计任务",
+					"description": "预测图像中物体的深度.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Image Classification",
+				"id": "image classification",
+				"description": "Assigning a label or class to an entire image.",
+				"supported": true,
+				"translation": {
+					"task": "图像分类",
+					"id": "图像分类任务",
+					"description": "为整个图像分配一个标签或类别.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Image Segmentation",
+				"id": "image segmentation",
+				"description": "Divides an image into segments where each pixel is mapped to an object. This task has multiple variants such as instance segmentation, panoptic segmentation and semantic segmentation.",
+				"supported": true,
+				"translation": {
+					"task": "图像分割",
+					"id": "图像分割任务",
+					"description": "将图像划分为多个区域，每个像素映射到一个对象。该任务有多种变体，例如实例分割、全景分割和语义分割.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Image to Image",
+				"id": "image to image",
+				"model": "Xenova/swin2SR-classical-sr-x2-64",
+				"description": "Transforming a source image to match the characteristics of a target image or a target image domain.",
+				"supported": true,
+				"translation": {
+					"task": "图像到图像",
+					"id": "图像到图像任务",
+					"description": "将源图像转换为与目标图像或目标图像领域匹配的特性.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Mask Generation",
+				"id": "mask generation",
+				"description": "Generate masks for the objects in an image.",
+				"supported": false,
+				"translation": {
+					"task": "掩膜生成",
+					"id": "掩膜生成任务",
+					"description": "为图像中的对象生成掩膜.",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Object Detection",
+				"id": "object detection",
+				"description": "Identify objects of certain defined classes within an image.",
+				"supported": true,
+				"translation": {
+					"task": "目标检测",
+					"id": "目标检测任务",
+					"description": "识别图像中某些定义类别的对象.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Video Classification",
+				"id": "n/a",
+				"description": "Assigning a label or class to an entire video.",
+				"supported": false,
+				"translation": {
+					"task": "视频分类",
+					"id": "暂无",
+					"description": "为整个视频分配一个标签或类别.",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Unconditional Image Generation",
+				"id": "n/a",
+				"description": "Generating images with no condition in any context (like a prompt text or another image).",
+				"supported": false,
+				"translation": {
+					"task": "无条件的图像生成",
+					"id": "暂无",
+					"description": "在没有任何条件（如提示文本或另一张图像）的情况下生成图像.",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Image Feature Extraction",
+				"id": "image feature extraction",
+				"description": "Transforming raw data into numerical features that can be processed while preserving the information in the original image.",
+				"supported": true,
+				"translation": {
+					"task": "图像特征提取",
+					"id": "图像特征提取任务",
+					"description": "将原始数据转换为可以在处理过程中使用的数值特征，同时保留原始图像的信息.",
+					"supported": "支持"
+				}
+			}
+		]
+	},
+	{
+		"category": "Audio",
+		"category_translation": "音频处理",
+		"tasks": [
+			{
+				"task": "Audio Classification",
+				"id": "audio classification",
+				"description": "Assigning a label or class to a given audio.",
+				"supported": true,
+				"translation": {
+					"task": "音频分类",
+					"id": "音频分类任务",
+					"description": "为给定的音频分配一个标签或类别.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Audio to Audio",
+				"id": "n/a",
+				"description": "Generating audio from an input audio source.",
+				"supported": false,
+				"translation": {
+					"task": "音频到音频",
+					"id": "暂无",
+					"description": "从输入的音频源生成音频.",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Automatic Speech Recognition",
+				"id": "automatic speech recognition",
+				"description": "Transcribing a given audio into text.",
+				"supported": true,
+				"translation": {
+					"task": "自动语音识别",
+					"id": "自动语音识别任务",
+					"description": "将给定的音频转录为文本.",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Text to Speech",
+				"id": "text to speech 或 text to audio",
+				"description": "Generating natural sounding speech given text input.",
+				"supported": true,
+				"translation": {
+					"task": "文本到语音",
+					"id": "文本到语音任务",
+					"description": "根据文本输入生成自然声音的语音.",
+					"supported": "支持"
+				}
+			}
+		]
+	},
+	{
+		"category": "Tabular",
+		"category_translation": "表格数据任务",
+		"tasks": [
+			{
+				"task": "Tabular Classification",
+				"id": "n/a",
+				"description": "Classifying a target category (a group) based on a set of attributes.",
+				"supported": false,
+				"translation": {
+					"task": "表格分类",
+					"id": "暂无",
+					"description": "根据一组属性对目标类别(一组)进行分类。",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Tabular Regression",
+				"id": "n/a",
+				"description": "Predicting a numerical value given a set of attributes.",
+				"supported": false,
+				"translation": {
+					"task": "表格回归",
+					"id": "暂无",
+					"description": "根据一组属性预测一个数值。",
+					"supported": "不支持"
+				}
+			}
+		]
+	},
+	{
+		"category": "Multimodal",
+		"category_translation": "多模态任务",
+		"tasks": [
+			{
+				"task": "Document Question Answering",
+				"id": "document question answering",
+				"description": "Answering questions on document images.",
+				"supported": true,
+				"translation": {
+					"task": "文档问答",
+					"id": "文档问答",
+					"description": "基于文档图像回答问题。",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Image to Text",
+				"id": "image to text",
+				"description": "Output text from a given image.",
+				"supported": true,
+				"translation": {
+					"task": "图片转文本",
+					"id": "图片转文本",
+					"description": "从给定的图片生成文本。",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Text to Image",
+				"id": "text to image",
+				"description": "Generates images from input text.",
+				"supported": false,
+				"translation": {
+					"task": "文本转图片",
+					"id": "文本转图片",
+					"description": "根据输入文本生成图片。",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Visual Question Answering",
+				"id": "visual question answering",
+				"description": "Answering open ended questions based on an image.",
+				"supported": false,
+				"translation": {
+					"task": "视觉问答",
+					"id": "视觉问答",
+					"description": "基于图片回答开放性问题。",
+					"supported": "不支持"
+				}
+			},
+			{
+				"task": "Zero Shot Audio Classification",
+				"id": "zero shot audio classification",
+				"description": "Classifying audios into classes that are unseen during training.",
+				"supported": true,
+				"translation": {
+					"task": "零样本音频分类",
+					"id": "零样本音频分类",
+					"description": "将音频分类到训练中未见过的类别中。",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Zero Shot Image Classification",
+				"id": "zero shot image classification",
+				"description": "Classifying images into classes that are unseen during training.",
+				"supported": true,
+				"translation": {
+					"task": "零样本图像分类",
+					"id": "零样本图像分类",
+					"description": "将图像分类到训练中未见过的类别中。",
+					"supported": "支持"
+				}
+			},
+			{
+				"task": "Zero Shot Object Detection",
+				"id": "zero shot object detection",
+				"description": "Identify objects of classes that are unseen during training.",
+				"supported": true,
+				"translation": {
+					"task": "零样本目标检测",
+					"id": "零样本目标检测",
+					"description": "识别训练中未见过类别的目标。",
+					"supported": "支持"
+				}
+			}
+		]
+	},
+	{
+		"category": "Reinforcement Learning",
+		"category_translation": "强化学习",
+		"tasks": [
+			{
+				"task": "Reinforcement Learning",
+				"id": "n/a",
+				"description": "Learning from actions by interacting with an environment through trial and error and receiving rewards (negative or positive) as feedback.",
+				"supported": true,
+				"translation": {
+					"task": "强化学习",
+					"id": "暂无",
+					"description": "通过与环境互动，通过试错和接收奖励（正向或负向）反馈来学习。",
+					"supported": "支持"
+				}
+			}
+		]
+	}
+]

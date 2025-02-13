@@ -1,0 +1,12 @@
+.dropBox {
+	display: block;
+	height: 40rem;
+	background-color: hsl(188, 50%, 95%);
+	border: 2px dashed hsl(188, 50%, 95%);
+	border-radius: 1rem;
+	cursor: pointer;
+}
+
+.dropBox-input {
+	display: none;
+}

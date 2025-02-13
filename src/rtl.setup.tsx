@@ -1,16 +1,15 @@
+import { type RenderOptions, render } from "@testing-library/react";
 /* eslint-disable react-refresh/only-export-components */
-import React, { ReactElement } from "react";
-import { render, RenderOptions } from "@testing-library/react";
+import type React from "react";
+import type { ReactElement } from "react";
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>;
+	return <>{children}</>;
 };
 
 const customRender = (
-  ui: ReactElement,
-  options?: Omit<RenderOptions, "wrapper">,
+	ui: ReactElement,
+	options?: Omit<RenderOptions, "wrapper">,
 ) => render(ui, { wrapper: AllTheProviders, ...options });
-
-export * from "@testing-library/react";
 
 export { customRender as render };
