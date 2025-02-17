@@ -1,8 +1,6 @@
 import type { TasksEntity } from "../types";
 import { TaskCard } from "./taskCard";
 
-import "./tasksSection.css";
-
 type TasksSectionProps = {
 	title: string;
 	list: TasksEntity[];
@@ -12,8 +10,8 @@ export function TasksSection(props: TasksSectionProps) {
 	const { title, list } = props;
 	return (
 		<div className="tasksSection-wrapper">
-			<h2 className="tasksSection-title">{title}</h2>
-			<div className="tasksSection-grid">
+			<h2>{title}</h2>
+			<div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-2.5">
 				{list.map((item) => {
 					return (
 						<TaskCard

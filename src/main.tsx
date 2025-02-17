@@ -2,7 +2,6 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
-
 import "./main.css";
 
 const router = createRouter({
@@ -28,5 +27,5 @@ if (rootElement) {
 		</StrictMode>,
 	);
 } else {
-	console.error("root element doesn't exist");
+	console.error("failed to create root on rootElement");
 }

@@ -1,7 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-import { TaskCategories } from "../components/taskCategories";
-import "./index.css";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
 	component: Index,
@@ -9,9 +6,18 @@ export const Route = createFileRoute("/")({
 
 function Index() {
 	return (
-		<div className="index-wrapper">
-			<h1 className="index-title">Transformers.js playground</h1>
-			<TaskCategories />
+		<div>
+			<div>
+				{["video tool", "image tool"].map((tool) => (
+					<Link
+						key={tool}
+						from={Route.fullPath}
+						to={`./${tool.replace(" ", "-")}`}
+					>
+						<h1>{tool}</h1>
+					</Link>
+				))}
+			</div>
 		</div>
 	);
 }

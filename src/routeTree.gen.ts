@@ -11,10 +11,24 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as TransformersjsImport } from './routes/transformersjs'
+import { Route as ImageToolImport } from './routes/image-tool'
 import { Route as ImageToImageImport } from './routes/image-to-image'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const TransformersjsRoute = TransformersjsImport.update({
+  id: '/transformersjs',
+  path: '/transformersjs',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ImageToolRoute = ImageToolImport.update({
+  id: '/image-tool',
+  path: '/image-tool',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const ImageToImageRoute = ImageToImageImport.update({
   id: '/image-to-image',
@@ -46,6 +60,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageToImageImport
       parentRoute: typeof rootRoute
     }
+    '/image-tool': {
+      id: '/image-tool'
+      path: '/image-tool'
+      fullPath: '/image-tool'
+      preLoaderRoute: typeof ImageToolImport
+      parentRoute: typeof rootRoute
+    }
+    '/transformersjs': {
+      id: '/transformersjs'
+      path: '/transformersjs'
+      fullPath: '/transformersjs'
+      preLoaderRoute: typeof TransformersjsImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -54,36 +82,46 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/image-to-image': typeof ImageToImageRoute
+  '/image-tool': typeof ImageToolRoute
+  '/transformersjs': typeof TransformersjsRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/image-to-image': typeof ImageToImageRoute
+  '/image-tool': typeof ImageToolRoute
+  '/transformersjs': typeof TransformersjsRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/image-to-image': typeof ImageToImageRoute
+  '/image-tool': typeof ImageToolRoute
+  '/transformersjs': typeof TransformersjsRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/image-to-image'
+  fullPaths: '/' | '/image-to-image' | '/image-tool' | '/transformersjs'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/image-to-image'
-  id: '__root__' | '/' | '/image-to-image'
+  to: '/' | '/image-to-image' | '/image-tool' | '/transformersjs'
+  id: '__root__' | '/' | '/image-to-image' | '/image-tool' | '/transformersjs'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ImageToImageRoute: typeof ImageToImageRoute
+  ImageToolRoute: typeof ImageToolRoute
+  TransformersjsRoute: typeof TransformersjsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ImageToImageRoute: ImageToImageRoute,
+  ImageToolRoute: ImageToolRoute,
+  TransformersjsRoute: TransformersjsRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,7 +135,9 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/image-to-image"
+        "/image-to-image",
+        "/image-tool",
+        "/transformersjs"
       ]
     },
     "/": {
@@ -105,6 +145,12 @@ export const routeTree = rootRoute
     },
     "/image-to-image": {
       "filePath": "image-to-image.tsx"
+    },
+    "/image-tool": {
+      "filePath": "image-tool.tsx"
+    },
+    "/transformersjs": {
+      "filePath": "transformersjs.tsx"
     }
   }
 }

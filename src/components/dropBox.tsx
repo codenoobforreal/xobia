@@ -1,7 +1,5 @@
 import type { ChangeEventHandler } from "react";
 
-import "./dropBox.css";
-
 type DropBoxProps = {
 	accept: string;
 	onChangeHandler: ChangeEventHandler<HTMLInputElement>;
@@ -11,13 +9,13 @@ function DropBox(props: DropBoxProps) {
 	const { accept, onChangeHandler } = props;
 
 	return (
-		<label htmlFor="dropBox" className="dropBox">
+		<label className="block h-40 cursor-pointer">
 			<input
 				onChange={onChangeHandler}
 				type="file"
 				id="dropBox"
 				name="dropBox"
-				className="dropBox-input"
+				className="hidden"
 				accept={accept}
 			/>
 		</label>

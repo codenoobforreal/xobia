@@ -1,4 +1,3 @@
-import "./taskCard.css";
 import { Link } from "@tanstack/react-router";
 import { Route } from "../routes";
 
@@ -20,14 +19,14 @@ export function TaskCard(props: TaskCardProps) {
 		<Link
 			from={Route.fullPath}
 			to={`./${toRouteFullPath}`}
-			className="taskCard"
+			className="grid gap-2.5 rounded-md border p-1 shadow-md"
 			style={{
 				cursor: isAvailable ? "pointer" : "not-allowed",
 			}}
 		>
-			<h3 className="taskCard-title">{task}</h3>
-			<p className="taskCard-model">{model}</p>
-			<p className="taskCard-desc">{desc}</p>
+			<h3>{task}</h3>
+			<p>{model}</p>
+			<p className="self-end">{desc}</p>
 		</Link>
 	);
 }

@@ -1,1 +1,1 @@
-git-format-staged --formatter 'bun run code-check' .
+bun run code-check && git add -A .

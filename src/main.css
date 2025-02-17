@@ -1,60 +1,11 @@
+@import "tailwindcss";
+
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
-	/* background */
-	--color-primary: hsl(188, 50%, 90%);
-	/* text */
-	--color-secondary: hsl(188, 50%, 10%);
-	/* add personality */
-	--color-tertiary: hsl(248, 80%, 20%);
-	/* important & button */
-	--color-accent: hsl(128, 80%, 20%);
-}
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-.dark {
-	--color-primary: hsl(188, 50%, 10%);
-	--color-secondary: hsl(188, 50%, 90%);
-	--color-tertiary: hsl(248, 80%, 80%);
-	--color-accent: hsl(128, 80%, 80%);
-}
-
-html {
-	font-size: 62.5%;
-}
-
-body {
-	background-color: var(--color-primary);
-	color: var(--color-secondary);
-}
-
-a {
-	text-decoration: none;
-}
-
-h1 {
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-
-h2 {
-	padding-top: 16px;
-	padding-bottom: 16px;
-}
-
-h3 {
-	padding-top: 12px;
-	padding-bottom: 12px;
 }
 
 img {
@@ -62,7 +13,4 @@ img {
 	font-size: italic;
 	background-repeat: no-repeat;
 	background-size: cover;
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
 }

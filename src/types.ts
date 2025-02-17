@@ -22,3 +22,11 @@ export interface TaskTranslation {
 	supported: string;
 }
 // end of json type
+
+// start of error type
+
+export interface FileReaderError extends Error {
+	name: "FileReaderError";
+}
+
+// end of error type

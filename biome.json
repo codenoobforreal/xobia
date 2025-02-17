@@ -20,6 +20,9 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"nursery": {
+				"useSortedClasses": "warn"
+			},
 			"performance": {
 				"noReExportAll": "error",
 				"noBarrelFile": "error"
