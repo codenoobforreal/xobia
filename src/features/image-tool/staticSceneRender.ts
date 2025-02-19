@@ -165,7 +165,7 @@ function renderAllStaticElements({
 	}
 }
 
-function drawElementFromCanvas({
+export function drawElementFromCanvas({
 	elementWithCanvas,
 	context,
 	scrollX,
