@@ -1,9 +1,10 @@
-import { FileReaderError } from "../../utils";
+import { CANVAS_AREA_LIMIT, CANVAS_WIDTH_HEIGHT_LIMIT } from "../../constants";
+import { CanvasError, FileReaderError } from "../../utils";
 import { elementWithCanvasCache } from "./state";
 import type { StaticElement, StaticElementWithCanvas } from "./types";
 import { viewportCoordsToSceneCoords } from "./utils";
 
-function covertimageElementToStaticElement({
+export function covertimageElementToStaticElement({
 	element,
 	fileDropCoord,
 	scrolled,
@@ -97,7 +98,7 @@ export async function renderStaticScene({
 	});
 }
 
-async function covertimagesToStaticElement({
+export async function covertimagesToStaticElement({
 	imageFilesToBeLoaded,
 	fileDropCoord,
 	canvasWrapperOffsets,
@@ -134,7 +135,7 @@ async function covertimagesToStaticElement({
 		);
 }
 
-function renderAllStaticElements({
+export function renderAllStaticElements({
 	staticElements,
 	context,
 	scrolled,
@@ -202,7 +203,9 @@ export function drawElementFromCanvas({
 	context.restore();
 }
 
-function loadImageFileToElement(imageFile: File): Promise<HTMLImageElement> {
+export function loadImageFileToElement(
+	imageFile: File,
+): Promise<HTMLImageElement> {
 	return new Promise((resolve, reject) => {
 		const image = new Image();
 		const reader = new FileReader();
@@ -225,33 +228,34 @@ function loadImageFileToElement(imageFile: File): Promise<HTMLImageElement> {
 
 // https://jhildenbiddle.github.io/canvas-size/#/?id=desktop
 // https://jhildenbiddle.github.io/canvas-size/#/?id=mobile
-function cappedElementCanvasSize({
+export function cappedElementCanvasSize({
 	element,
 	zoom,
 }: {
 	element: StaticElement;
 	zoom: number;
 }) {
-	const AREA_LIMIT = 16777216;
-	const WIDTH_HEIGHT_LIMIT = 32767;
 	const padding = getElementInCanvasPadding(element);
 	// If the element is a rectangle,(x1,y1) is top left corner,(x2,y2) is the bottom right corner
 	// const [x1, y1, x2, y2] = getElementAbsoluteCoords({ element });
 	const elementWidth = element.width;
-	const elementHeight = element.width;
+	const elementHeight = element.height;
 	let width = elementWidth * window.devicePixelRatio + padding * 2;
 	let height = elementHeight * window.devicePixelRatio + padding * 2;
 	let scale = zoom;
 	// rescale to ensure width and height is within limits
 	if (
-		width * scale > WIDTH_HEIGHT_LIMIT ||
-		height * scale > WIDTH_HEIGHT_LIMIT
+		width * scale > CANVAS_WIDTH_HEIGHT_LIMIT ||
+		height * scale > CANVAS_WIDTH_HEIGHT_LIMIT
 	) {
-		scale = Math.min(WIDTH_HEIGHT_LIMIT / width, WIDTH_HEIGHT_LIMIT / height);
+		scale = Math.min(
+			CANVAS_WIDTH_HEIGHT_LIMIT / width,
+			CANVAS_WIDTH_HEIGHT_LIMIT / height,
+		);
 	}
 	// rescale to ensure canvas area is within limits
-	if (width * height * scale * scale > AREA_LIMIT) {
-		scale = Math.sqrt(AREA_LIMIT / (width * height));
+	if (width * height * scale * scale > CANVAS_AREA_LIMIT) {
+		scale = Math.sqrt(CANVAS_AREA_LIMIT / (width * height));
 	}
 	width = Math.floor(width * scale);
 	height = Math.floor(height * scale);
@@ -262,7 +266,7 @@ function cappedElementCanvasSize({
  * top left corner,bottom right corner and
  * the center point of the element
  */
-function getElementAbsoluteCoords({
+export function getElementAbsoluteCoords({
 	element,
 }: {
 	element: StaticElement;
@@ -277,14 +281,14 @@ function getElementAbsoluteCoords({
 	];
 }
 
-function getElementInCanvasPadding(element: StaticElement) {
+export function getElementInCanvasPadding(element: StaticElement) {
 	switch (element.type) {
 		default:
 			return 20;
 	}
 }
 
-function bootstrapCanvas({
+export function bootstrapCanvas({
 	canvas,
 	width,
 	height,
@@ -315,7 +319,7 @@ function bootstrapCanvas({
 	}
 	const context = canvas.getContext("2d");
 	if (!context) {
-		return;
+		throw new CanvasError("Canvas does not support 2D context");
 	}
 	// Normalize coordinate system to use CSS pixels.
 	context.scale(zoom, zoom);
@@ -327,9 +331,8 @@ function bootstrapCanvas({
 	// context.restore();
 	return context;
 }
-
 // ElementCanvas is in memory canvas
-function generateElementCanvas({
+export function generateElementCanvas({
 	element,
 	zoom,
 }: {
@@ -340,7 +343,7 @@ function generateElementCanvas({
 	const context = canvas.getContext("2d");
 	const padding = getElementInCanvasPadding(element);
 	if (!context) {
-		return;
+		throw new CanvasError("Canvas does not support 2D context");
 	}
 	const { width, height, scale } = cappedElementCanvasSize({
 		element,
@@ -371,7 +374,7 @@ function generateElementCanvas({
 	};
 }
 
-function drawElementOnCanvas({
+export function drawElementOnCanvas({
 	element,
 	context,
 }: {
@@ -389,7 +392,7 @@ function drawElementOnCanvas({
 	}
 }
 
-function generateElementWithCanvas({
+export function generateElementWithCanvas({
 	element,
 	zoom,
 }: { element: StaticElement; zoom: number }) {

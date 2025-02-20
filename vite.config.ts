@@ -13,8 +13,12 @@ export default defineConfig({
 		react(),
 	],
 	test: {
-		environment: "jsdom",
+		environment: "happy-dom",
 		globals: true,
 		setupFiles: ["./test.setup.ts"],
+		coverage: {
+			enabled: true,
+			reporter: "text",
+		},
 	},
 });
